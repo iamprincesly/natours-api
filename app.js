@@ -8,6 +8,7 @@ const xss = require('xss-clean');
 const hpp = require('hpp');
 const cookieParser = require('cookie-parser');
 const compression = require('compression');
+const cors = require('cors');
 
 const tourRouter = require('./routes/tourRoutes');
 const userRouter = require('./routes/userRoutes');
@@ -25,6 +26,21 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 // 1) GOLBAL MIDDLEWARES
+// Implement CORS
+app.use(cors());
+
+/* 
+If we want to allow access to our api only from one domain
+like api.domain.com (backend) domain.com (frontend)
+app.use(cors({
+    origin: 'https://ourdomain.com'
+}));
+*/
+
+// this apply cors to all request method
+app.options('*', cors());
+// app.options('/api/v1/tours/:id', cors()); // Allow cors on all request on a special route
+
 // Serving static files
 // app.use(express.static(`${__dirname}/public`));
 app.use(express.static(path.join(__dirname, 'public')));
