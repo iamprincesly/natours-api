@@ -200,11 +200,11 @@ toursSchema.pre(/^find/, function (next) {
     next();
 });
 
-toursSchema.post(/^find/, function (docs, next) {
-    console.log(`Query took ${Date.now() - this.start} milliseconds`);
-    console.log(docs);
-    next();
-});
+// toursSchema.post(/^find/, function (docs, next) {
+//     console.log(`Query took ${Date.now() - this.start} milliseconds`);
+//     console.log(docs);
+//     next();
+// });
 
 // AGGREGATION MIDDLEWARE
 // toursSchema.pre('aggregate', function (next) {
