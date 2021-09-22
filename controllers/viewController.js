@@ -23,7 +23,9 @@ exports.getOverview = catchAsync(async (req, res) => {
     res.status(200)
         .set(
             'Content-Security-Policy',
-            "default-src 'self' http://127.0.0.1:3000 https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+            `default-src 'self' ${req.protocol}://${req.get(
+                'host'
+            )} https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;`
         )
         .render('overview', {
             tours,
@@ -48,7 +50,9 @@ exports.getTour = catchAsync(async (req, res, next) => {
     res.status(200)
         .set(
             'Content-Security-Policy',
-            "default-src 'self' http://127.0.0.1:3000 https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+            `default-src 'self' ${req.protocol}://${req.get(
+                'host'
+            )} https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;`
         )
         .render('tour', {
             title: `${tour.name} Tour`,
@@ -60,7 +64,9 @@ exports.getLoginForm = catchAsync(async (req, res, next) => {
     res.status(200)
         .set(
             'Content-Security-Policy',
-            "default-src 'self' http://127.0.0.1:3000 https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+            `default-src 'self' ${req.protocol}://${req.get(
+                'host'
+            )} https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;`
         )
         .render('login', {
             title: 'Login to your account',
@@ -71,7 +77,9 @@ exports.getAccount = (req, res) => {
     res.status(200)
         .set(
             'Content-Security-Policy',
-            "default-src 'self' http://127.0.0.1:3000 https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+            `default-src 'self' ${req.protocol}://${req.get(
+                'host'
+            )} https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;`
         )
         .render('account', {
             title: 'Your account',
@@ -106,7 +114,9 @@ exports.updateUserData = catchAsync(async (req, res, next) => {
     res.status(200)
         .set(
             'Content-Security-Policy',
-            "default-src 'self' http://127.0.0.1:3000 https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;"
+            `default-src 'self' ${req.protocol}://${req.get(
+                'host'
+            )} https://*.mapbox.com https://*.stripe.com ;base-uri 'self';block-all-mixed-content;font-src 'self' https: data:;frame-ancestors 'self';img-src 'self' data:;object-src 'none';script-src https://cdnjs.cloudflare.com https://api.mapbox.com https://js.stripe.com 'self' blob: ;script-src-attr 'none';style-src 'self' https: 'unsafe-inline';upgrade-insecure-requests;`
         )
         .render('account', {
             title: 'Your account',
