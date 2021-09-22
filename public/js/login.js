@@ -33,7 +33,7 @@ export const logout = async () => {
 
         // location.reload(true) make it reload a fresh page from the server instead
         // because cache pages might still display logout user information of the cache
-        if (res.data.status === 'success') location.assign('/').reload(true);
+        if (res.data.status === 'success') location.assign('/');
     } catch (err) {
         showAlert('error', 'Error logging out! try again');
     }
