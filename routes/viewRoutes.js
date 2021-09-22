@@ -7,9 +7,12 @@ const {
     getAccount,
     updateUserData,
     getMyTours,
+    alerts,
 } = require('../controllers/viewController');
 
 const router = express.Router();
+
+router.use(alerts);
 
 router.get('/me', protect, getAccount);
 router.get('/my-tours', protect, getMyTours);
