@@ -12,8 +12,8 @@
         "build:js": "parcel build ./public/js/index.js --out-dir ./public/js --out-file bundle.js"
     },
     "keywords": [],
-    "author": "Prince Sly",
-    "license": "ISC",
+    "author": "Sylvanus Etim <iamprincesly@gmail.com>",
+    "license": "MIT",
     "dependencies": {
         "@babel/polyfill": "^7.12.1",
         "axios": "^0.21.4",
